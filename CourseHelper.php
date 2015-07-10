@@ -24,6 +24,22 @@ function emecanaan_scripts()
     wp_enqueue_style('emecanaan', plugins_url('css/emecanaan.css', __FILE__));
     emecanaan_scripts_basic();
 }
+function test_plugin_setup_menu(){
+    add_menu_page( 'Quiz Manager', 'Course Helper', 'manage_options', 'course-helper', 'add_cannaan_menu','dashicons-welcome-write-blog' );
+}
 
+function add_cannaan_menu(){
 
+   ?>
+    <h1>Canaan Quiz Menu!</h1>
+      <form>
+          <input type="text" placeholder="Quiz title"/>
+          <input type="text" placeholder="Images" />
+          <input type="submit"/>
+
+      </form>
+<?php
+
+}
 add_action('wp_enqueue_scripts', 'emecanaan_scripts');
+add_action('admin_menu', 'test_plugin_setup_menu');
