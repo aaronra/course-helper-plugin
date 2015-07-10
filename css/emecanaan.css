@@ -1,0 +1,40 @@
+.emecanaan-active {
+    display: block !important;
+}
+
+.wpcw_fe_progress_box_wrap,
+.wpcw_fe_quiz_title,
+.wpcw_fe_quiz_q_title,
+.wpcw_fe_quiz_q_result,
+.wpcw_fe_quiz_q_result_incorrect,
+.wpcw_fe_quiz_q_your_answer,
+.wpcw_fe_quiz_q_correct,
+.wpcw_fe_quiz_q_possible,
+.wpcw_fe_quiz_q_hdr,
+.wpcw_fe_quiz_q_image {
+    display: none;
+}
+
+.wpcw_fe_quiz_q_single {
+    border-bottom: none !important;
+    padding: 0 !important;
+}
+
+.emecanaan-back {
+    float: left;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 17.5px 30.3px 17.5px 0;
+    border-color: transparent #009999 transparent transparent;
+}
+
+.emecanaan-next {
+    float: right;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 17.5px 0 17.5px 30.3px;
+    border-color: transparent transparent transparent #009999;
+
+}
