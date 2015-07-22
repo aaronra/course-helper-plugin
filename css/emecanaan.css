@@ -2,15 +2,14 @@
     display: block !important;
 }
 
-.wpcw_fe_progress_box_wrap,
-.wpcw_fe_quiz_title,
 .wpcw_fe_quiz_q_title,
-.wpcw_fe_quiz_q_result,
-.wpcw_fe_quiz_q_result_incorrect,
-.wpcw_fe_quiz_q_your_answer,
-.wpcw_fe_quiz_q_correct,
-.wpcw_fe_quiz_q_possible,
-.wpcw_fe_quiz_q_hdr,
+    /*.wpcw_fe_quiz_q_result,
+    .wpcw_fe_quiz_q_result_incorrect,
+    .wpcw_fe_quiz_q_correct,
+    .wpcw_fe_quiz_q_possible,
+    .wpcw_fe_quiz_q_hdr,*/
+.wpcw_fe_progress_box_success,
+.wpcw_fe_quiz_q_answers,
 .wpcw_fe_quiz_q_image {
     display: none;
 }
@@ -21,20 +20,74 @@
 }
 
 .emecanaan-back {
-    float: left;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 17.5px 30.3px 17.5px 0;
-    border-color: transparent #009999 transparent transparent;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #63a62f;
+    border-bottom: 1px solid #5b992b;
+    background-color: #7fbf4d;
+    border-radius: 3px;
+    color: #fff !important;
+    font-weight: bold;
+    padding: 7px 8px 8px 8px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #4c9021;
+    text-decoration: none;
+    font-size: 10pt;
+    line-height: 1;
 }
 
 .emecanaan-next {
-    float: right;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 17.5px 0 17.5px 30.3px;
-    border-color: transparent transparent transparent #009999;
+    margin: 10px;
+    cursor: pointer;
+    right: 0;
+    border: 1px solid #63a62f;
+    border-bottom: 1px solid #5b992b;
+    background-color: #7fbf4d;
+    border-radius: 3px;
+    color: #fff !important;
+    font-weight: bold;
+    line-height: 1;
+    padding: 7px 10px 8px 10px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #4c9021;
+    text-decoration: none;
+    font-size: 10pt;
+}
 
+.wpcw_quiz_row_question,
+.wpcw_quiz_details_randomize_answers {
+    display: none;
+}
+
+#wpcw_fe_timer_countdown {
+    position: fixed;
+    left: 0;
+}
+
+.paginator {
+    text-align: center;
+}
+
+.et_pb_testimonial_0.et_pb_testimonial,
+.et_pb_testimonial_0.et_pb_testimonial p {
+    line-height: normal !important;
+}
+
+.page-number {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #63a62f;
+    border-bottom: 1px solid #5b992b;
+    background-color: #7fbf4d;
+    border-radius: 3px;
+    color: #fff !important;
+    font-weight: bold;
+    text-align: center;
+}
+.page-number-active {
+    padding: 5px 10px;
+    cursor: default;
+    color: black !important;
+    font-weight: bold;
+    text-align: center;
 }
