@@ -16,32 +16,21 @@ function coursehelper() {
     var images = jQuery.makeArray(obj);
     var image = jQuery(images[counter]);
     image.addClass('emecanaan-active');
-    var submitbutton = jQuery('.fe_btn.fe_btn_completion.btn_completion').toArray();;
+    var submitbutton = jQuery('.fe_btn.fe_btn_completion.btn_completion').toArray();
+    ;
     submitbutton[0].value = 'Finish';
     var answers = jQuery('.wpcw_fe_quiz_q_answers li input').toArray();
     var paginator = '';
     for (var answer in answers) {
         answers[answer].checked = true;
 
-        if(counter == answer){
-            paginator = paginator+'<a class="page-number-active">'+answer+'</a>';
-        }else{
-            paginator = paginator+'<a class="page-number">'+answer+'</a>';
-        }
-
     }
-    jQuery('.wpcw_fe_quiz_q_image').append('<div class="paginator"><a class="emecanaan-back"> back </a><div id="paginatorNumbers">'+paginator+'</div><a class="emecanaan-next"> next </a></div>');
+    for (var question in images) {
+        paginator = paginator + '<a class="page-number" value="'+question+'">' + (parseInt(question)+1) + '</a>';
+    }
+    jQuery('.wpcw_fe_quiz_q_image').append('<div class="paginator"><a class="emecanaan-back"> back </a>' + paginator + '<a class="emecanaan-next"> next </a></div>');
     jQuery('.emecanaan-back').click(function () {
-        paginator = '';
-        for (var answer in answers) {
-            if(counter == answer){
-                paginator = paginator+'<a class="page-number-active">'+answer+'</a>';
-            }else{
-                paginator = paginator+'<a class="page-number">'+answer+'</a>';
-            }
 
-        }
-        jQuery('#paginatorNumber').html(paginator);
         if (counter === 0) {
             alert('Already last page');
         } else {
@@ -56,17 +45,8 @@ function coursehelper() {
         }
     });
     jQuery('.emecanaan-next').click(function () {
-        paginator = '';
-        for (var answer in answers) {
-            if(counter == answer){
-                paginator = paginator+'<a class="page-number-active">'+answer+'</a>';
-            }else{
-                paginator = paginator+'<a class="page-number">'+answer+'</a>';
-            }
 
-        }
-        jQuery('#paginatorNumber').html(paginator);
-        if (counter === obj.length - 1) {
+        if (counter === images.length - 1) {
             alert('Already last page');
         } else {
             var prevImage = jQuery(images[counter]);
@@ -76,6 +56,30 @@ function coursehelper() {
             var nextImage = jQuery(images[counter]);
             nextImage.addClass('emecanaan-active');
         }
+    });
+    jQuery('.page-number').click(function () {
+        var pageObj = jQuery('.page-number-active').toArray();
+        var pageList = jQuery.makeArray(pageObj);
+        for (var pages in pageList) {
+            var pageItem = jQuery(pageList[pages]);
+            if (pageItem.hasClass('page-number-active')) {
+                pageItem.removeClass('page-number-active');
+                pageItem.addClass('page-number');
+
+            }
+        }
+        jQuery(this).removeClass('page-number');
+        var quickJump = jQuery(this).attr('value');
+        var prevImage = jQuery(images[counter]);
+
+        prevImage.removeClass('emecanaan-active');
+
+        var nextImage = jQuery(images[parseInt(quickJump)]);
+        counter = parseInt(quickJump);
+        nextImage.addClass('emecanaan-active');
+        jQuery(this).addClass('page-number-active');
+        console.log(jQuery(this));
+
     });
 
 }
